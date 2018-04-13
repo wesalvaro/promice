@@ -23,7 +23,7 @@ There is one type that needs to be described:
 
 ### Singletons with `one(string, (InjectedPromiseCallback|*))`
 
-The first argumnt is to name our singleton for injection by other things.
+The first argument names our singleton for injection by other things.
 In addition to taking an InjectedPromiseCallback, singletons can be created with a constant value of any object type except `Array` and `Function`. Only the _first_ time a singleton is injected is its code run. All subsequent injections will use the value from the _first_ injection.
 
 ```js
@@ -36,7 +36,8 @@ promice.one('ipAddress', () => (resolve) => resolve(
 
 ### Factories with `each(string, InjectedPromiseCallback)`
 
-The first argumnt is to name our factory for injection by other things. Each time a factory is injected, it is re-evaluated.
+The first argument names our factory for injection by other things.
+Each time a factory is injected, it is re-evaluated.
 
 ```js
 promice.each('networkTime', () => (resolve) => resolve(
