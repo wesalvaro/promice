@@ -57,3 +57,20 @@ promice.run((pageLoadedTime, ipAddress, networkTime) => {
   console.log("It took %dms to load the time.", timeDrift);
 });
 ```
+
+## Testing
+
+[Run tests](https://rawgit.com/wesalvaro/promice/master/promice_test.html) on the library.
+
+For testing your own application using Promice, you'll want to make use of `promice.testing`.
+Inside, you'll find two useful functions: `stash` and `restore`.
+
+### Stash
+
+When testing, it's best not to use real dependencies.
+You should get only the needed dependencies for testing out of the bag and then `stash` the bag.
+After you've stashed the real bag, you may again add dependencies for testing back into the bag.
+
+### Restore
+
+Once you're done with testing, you can `restore` the original dependency bag.
